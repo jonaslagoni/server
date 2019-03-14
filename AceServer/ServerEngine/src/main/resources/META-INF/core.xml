@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="dk.sdu.ace.serverengine.Test">
+    <implementation class="dk.sdu.ace.serverengine.Test"/>
+    
+    <reference bind="setDependencyController" cardinality="1..1"
+               interface="dk.sdu.ace.library.interfaces.IDependencyController"
+               name="dk.sdu.ace.dp.Controller" policy="dynamic" unbind="removeDependencyController"/>
+    
+    <reference bind="setGameWorld" cardinality="0..1"
+               interface="dk.sdu.ace.library.interfaces.IGameWorld"
+               name="dk.sdu.ace.gameworld.Server" policy="dynamic" unbind="removeGameWorld"/>
+</scr:component>

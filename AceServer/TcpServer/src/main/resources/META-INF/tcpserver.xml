@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="dk.sdu.ace.tcp.server.TcpServer">
+    <implementation class="dk.sdu.ace.tcp.server.TcpServer"/>
+    <service>
+        <provide interface="dk.sdu.ace.library.interfaces.ITcpServer"/>
+    </service>
+    
+    <reference bind="setEventObserverController" cardinality="1..1"
+               interface="dk.sdu.ace.library.interfaces.ITcpEventObserverController"
+               name="dk.sdu.ace.tcp.event.TcpEventHandler" policy="dynamic" unbind="removeEventObserverController"/>
+    
+</scr:component>

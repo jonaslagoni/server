@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="dk.sdu.ace.gameworld.Server">
+    <implementation class="dk.sdu.ace.gameworld.Server"/>
+    <service>
+        <provider interface="dk.sdu.ace.library.interfaces.IGameWorld" />
+    </service>
+    
+    <reference bind="setEventObserverController" cardinality="0..1"
+               interface="dk.sdu.ace.library.interfaces.ITcpEventObserverController"
+               name="dk.sdu.ace.tcp.event.TcpEventHandler" policy="dynamic" unbind="removeEventObserverController"/>
+    
+    <reference bind="setTcpServer" cardinality="0..1"
+               interface="dk.sdu.ace.library.interfaces.ITcpServer"
+               name="dk.sdu.ace.tcp.server.TcpServer" policy="dynamic" unbind="removeTcpServer"/>
+    
+</scr:component>

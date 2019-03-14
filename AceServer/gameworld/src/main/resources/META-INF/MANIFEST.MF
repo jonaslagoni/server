@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: Game world OSGi Bundle
+Bundle-ActivationPolicy: lazy
+Service-Component: META-INF/core.xml
